@@ -1,0 +1,3 @@
+SourceVMName,SourceVMResouceGroup,SourceVMLocation,TargetVMResouceGroup,TargetVMLocation,ASRRecoveryVaultName,ASRRecoveryVaultResourceGroup,RecoveryPlan,ASRPolicyName,TragetVNetName,TragetSubnetName,TargetStorageAccountName,TargetCacheStorageAccountName,AddressPrefixVnet,AddressPrefixSubnet,	
+VM1,ASRAutomation-RG,East US,ASRAutomationRecovery-RG,West US,A2ARecoveryVault,ASRAutomationRecovery-RG,ASRpolicy1,A2APolicy,a2arecoveryvnet,defaultSubnet,a2awstargetstorage,a2atargetcachestorage,192.168.0.0/24,192.168.0.16/28,	
+VM2,ASRAutomation-RG,East US,ASRAutomationRecovery-RG,West US,A2ARecoveryVault,ASRAutomationRecovery-RG,ASRpolicy1,A2APolicy,a2arecoveryvnet,defaultSubnet,a2awstargetstorage,a2atargetcachestorage,192.168.0.0/24,192.168.0.16/28,	

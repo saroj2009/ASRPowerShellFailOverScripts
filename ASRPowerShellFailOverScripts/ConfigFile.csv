@@ -1,0 +1,37 @@
+Name,Value
+VaultsettingsfilePath,C:\Users\MyVM\Desktop\DMSASRTemplateV1.0\VaultsettingsfilePath\
+VaultTargetVMResouceGroupName,ASRAutomationRecovery-RG
+VaultTargetVMLocation,West US
+ASRRecoveryVaultName,A2ARecoveryVault
+PrimaryASRfabric_Location,East US
+PrimaryASRfabric_Name,A2A-East US
+RecoveryASRJob_Location,West US
+RecoveryASRJob_Name,A2A-West US
+PContainerASRJob_Name,A2A-East US
+RContainerASRJob_Name,A2A-West US
+PolicyASRJob_Name,A2APolicy
+ProtectionContainerMapping_Name,A2APrimaryToRecovery
+ProtectionContainerFailover_Name,A2ARecoveryToPrimary
+P2RnetASRJobName,A2ASourceToTargetNWMapping
+F2RnetASRJobName,A2ATargetToSourceNWMapping
+WOmsgCreatePrimaryASRfabric,Primary fabric object has been created successfully
+WOmsgCreateRecoveryASRfabric,Recovery fabric object has been created successfully
+WOmsgCreateProtectioncontainerInPrimaryAzureRegion,Primary protection container object has been created successfully
+WOmsgCreateProtectioncontainerInRecoveryAzureRegion,Recovery protection container object has been created successfully
+WOmsgCreateReplicationPolicy,Replication policy object has been created successfully
+WOmsgPrimaryContainerMappingForPrimaryAndRecovery,Primary container mapping for Primary and Recovery Protection object has been created successfully
+WOmsgCreateProtectioncontainerMappingForFailover,Protection container mapping for failback object has been created successfully
+WriteOutputmsg,The updated job state is successfuly completed
+WOmsgSuccess,success
+RPName,ASRpolicy1
+LogStorageAccountId,/subscriptions/e26a65ec-cca9-4e92-9a16-012e073ef57b/resourceGroups/A2ARECOVERYRG/providers/Microsoft.Storage/storageAccounts/a2atargetstoragefr
+RecoveryAzureStorageAccountId,/subscriptions/e26a65ec-cca9-4e92-9a16-012e073ef57b/resourceGroups/Unit4ASR-POC/providers/Microsoft.Storage/storageAccounts/deba2astorage
+RecoveryResourceGroupId,/subscriptions/e26a65ec-cca9-4e92-9a16-012e073ef57b/resourceGroups/Unit4ASR-POC
+TFOVnetName,a2aTFOvnet
+TFOResourceGroupName,A2ATFORECOVERYRG
+TFOLocation,francecentral
+TFOSubnetName,default
+TFOAddressPrefix,192.168.0.0/24
+TFOSubnetAddressPrefix,192.168.0.16/28
+
+
