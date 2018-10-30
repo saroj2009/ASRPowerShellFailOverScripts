@@ -1,14 +1,14 @@
 Name,Value
-VaultsettingsfilePath,C:\Users\MyVM\Desktop\DMSASRTemplateV1.0\VaultsettingsfilePath\
+VaultsettingsfilePath,C:\Users\MyVM\Desktop\DMSASRTemplateV1.1\VaultsettingsfilePath\
 VaultTargetVMResouceGroupName,ASRAutomationRecovery-RG
-VaultTargetVMLocation,West US
-ASRRecoveryVaultName,A2ARecoveryVault
-PrimaryASRfabric_Location,East US
-PrimaryASRfabric_Name,A2A-East US
-RecoveryASRJob_Location,West US
-RecoveryASRJob_Name,A2A-West US
-PContainerASRJob_Name,A2A-East US
-RContainerASRJob_Name,A2A-West US
+VaultTargetVMLocation,North Central US
+ASRRecoveryVaultName,A2ARecoveryVault3
+PrimaryASRfabric_Location,South Central US
+PrimaryASRfabric_Name,A2A-South Central US
+RecoveryASRJob_Location,North Central US
+RecoveryASRJob_Name,A2A-North Central US
+PContainerASRJob_Name,A2A-South Central US
+RContainerASRJob_Name,A2A-North Central US
 PolicyASRJob_Name,A2APolicy
 ProtectionContainerMapping_Name,A2APrimaryToRecovery
 ProtectionContainerFailover_Name,A2ARecoveryToPrimary
@@ -24,9 +24,9 @@ WOmsgCreateProtectioncontainerMappingForFailover,Protection container mapping fo
 WriteOutputmsg,The updated job state is successfuly completed
 WOmsgSuccess,success
 RPName,ASRpolicy1
-LogStorageAccountId,/subscriptions/e26a65ec-cca9-4e92-9a16-012e073ef57b/resourceGroups/A2ARECOVERYRG/providers/Microsoft.Storage/storageAccounts/a2atargetstoragefr
-RecoveryAzureStorageAccountId,/subscriptions/e26a65ec-cca9-4e92-9a16-012e073ef57b/resourceGroups/Unit4ASR-POC/providers/Microsoft.Storage/storageAccounts/deba2astorage
-RecoveryResourceGroupId,/subscriptions/e26a65ec-cca9-4e92-9a16-012e073ef57b/resourceGroups/Unit4ASR-POC
+LogStorageAccountId,/subscriptions/16c4dd7c-eae8-42bc-ae66-6e5691642e32/resourceGroups/ASRAutomationRecovery-RG/providers/Microsoft.Storage/storageAccounts/a2atargetstorageaccount
+RecoveryAzureStorageAccountId,/subscriptions/16c4dd7c-eae8-42bc-ae66-6e5691642e32/resourceGroups/ASRDemoRG/providers/Microsoft.Storage/storageAccounts/a2atargetcachestorage
+RecoveryResourceGroupId,/subscriptions/16c4dd7c-eae8-42bc-ae66-6e5691642e32/resourceGroups/ASRDemoRG
 TFOVnetName,a2aTFOvnet
 TFOResourceGroupName,A2ATFORECOVERYRG
 TFOLocation,francecentral

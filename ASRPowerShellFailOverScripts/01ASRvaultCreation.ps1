@@ -1,19 +1,19 @@
 ﻿
 #region constants
 
-    $cname = Import-CSV -Path "C:\Users\MyVM\Desktop\DMSASRTemplateV1.0\ConfigFile.csv"
+    $cname = Import-CSV -Path "C:\Users\MyVM\Desktop\DMSASRTemplateV1.1\ConfigFile.csv"
     $hcname=@{}
     function getConstants 
         {
-            $hcname2=@{}
+            $returnhcname=@{}
             foreach($index in $cname)
             {
-                $hcname2[$index.Name]=$index.Value
+                $returnhcname[$index.Name]=$index.Value
             }
-            return $hcname2
+            return $returnhcname
         }
     $hcname =getConstants
-    $createVault = fncreateVault
+   # $createVault = fncreateVault
 #endregion
 
 #region Create a Recovery Services vault

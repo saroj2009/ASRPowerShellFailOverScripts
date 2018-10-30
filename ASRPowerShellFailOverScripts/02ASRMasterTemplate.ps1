@@ -12,8 +12,8 @@
 
 #region Get details of the virtual machine
 
-    $csv = Import-Csv -LiteralPath 'C:\Users\MyVM\Desktop\DMSASRTemplateV1.0\ASRVMDetails.csv'
-    Import-Module -Name "C:\Users\MyVM\Desktop\DMSASRTemplateV1.0\ASRvaultCreation.ps1"
+    $csv = Import-Csv -LiteralPath 'C:\Users\MyVM\Desktop\DMSASRTemplateV1.1\ASRVMDetails.csv'
+    Import-Module -Name "C:\Users\MyVM\Desktop\DMSASRTemplateV1.1\01ASRvaultCreation.ps1"
 
     for ($index = 0; $index -lt $csv.Length; $index++)
     { 
@@ -98,14 +98,13 @@
 
      #region Create network mapping between the primary virtual network and the recovery virtual network
          
-		  $P2RnetASRJob = $null
+          $P2RnetASRJob = $null
           if($index-gt 0){$P2RnetASRJob = Get-ASRNetworkMapping -PrimaryFabric $PrimaryFabric}
           if ([string]::IsNullOrEmpty($P2RnetASRJob))
           {
-				# Create an ASR network mapping between the primary Azure virtual network and the recovery Azure virtual network
-				$P2RnetASRJob = New-ASRNetworkMapping -AzureToAzure -Name $hcname.P2RnetASRJobName -PrimaryFabric $PrimaryFabric -PrimaryAzureNetworkId $SourcePrimaryNetwork -RecoveryFabric $RecoveryFabric -RecoveryAzureNetworkId $TargetRecoveryNetwork
-		 }
-
+                # Create an ASR network mapping between the primary Azure virtual network and the recovery Azure virtual network
+                $P2RnetASRJob = New-ASRNetworkMapping -AzureToAzure -Name $hcname.P2RnetASRJobName -PrimaryFabric $PrimaryFabric -PrimaryAzureNetworkId $SourcePrimaryNetwork -RecoveryFabric $RecoveryFabric -RecoveryAzureNetworkId $TargetRecoveryNetwork
+          }
          #Track Job status to check for completion
          while (($P2RnetASRJob.State -eq "InProgress") -or ($P2RnetASRJob.State -eq "NotStarted")){ 
                  sleep 10; 
@@ -117,14 +116,14 @@
 
 
      #region Create network mapping for the reverse direction (failback)
-		 
-		 $F2RnetASRJob = $null
+        
+         $F2RnetASRJob = $null
          if($index-gt 0){$F2RnetASRJob = Get-ASRNetworkMapping -PrimaryFabric $RecoveryFabric}
          if ([string]::IsNullOrEmpty($F2RnetASRJob))
          {
-				# Create an ASR network mapping for failback between the recovery Azure virtual network and the primary Azure virtual network
-				$F2RnetASRJob = New-ASRNetworkMapping -AzureToAzure -Name $hcname.F2RnetASRJobName -PrimaryFabric $RecoveryFabric -PrimaryAzureNetworkId $TargetRecoveryNetwork -RecoveryFabric $PrimaryFabric -RecoveryAzureNetworkId $SourcePrimaryNetwork
-		 }
+                # Create an ASR network mapping for failback between the recovery Azure virtual network and the primary Azure virtual network
+                $F2RnetASRJob = New-ASRNetworkMapping -AzureToAzure -Name $hcname.F2RnetASRJobName -PrimaryFabric $RecoveryFabric -PrimaryAzureNetworkId $TargetRecoveryNetwork -RecoveryFabric $PrimaryFabric -RecoveryAzureNetworkId $SourcePrimaryNetwork
+         }
          #Track Job status to check for completion
          while (($F2RnetASRJob.State -eq "InProgress") -or ($F2RnetASRJob.State -eq "NotStarted")){ 
                 sleep 10; 

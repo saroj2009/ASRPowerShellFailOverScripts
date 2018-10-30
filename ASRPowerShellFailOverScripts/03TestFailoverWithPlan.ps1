@@ -2,7 +2,7 @@
 
 #region Create Variable
 
-    Import-Module -Name "C:\Users\MyVM\Desktop\DMSASRTemplateV1.0\ASRvaultCreation.ps1"
+    Import-Module -Name "C:\Users\MyVM\Desktop\DMSASRTemplateV1.1\01ASRvaultCreation.ps1"
     $PrimaryProtContainer = Get-ASRProtectionContainer -Fabric $PrimaryFabric -Name $hcname.PContainerASRJob_Name
     $PrimaryFabric = Get-AsrFabric -Name $hcname.PrimaryASRfabric_Name
     $RecoveryFabric = Get-AsrFabric -Name $hcname.RecoveryASRJob_Name

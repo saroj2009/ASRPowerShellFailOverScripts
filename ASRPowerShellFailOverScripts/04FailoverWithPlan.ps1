@@ -2,10 +2,21 @@
 
 #region Create Variables
 
-    Import-Module -Name "C:\Users\MyVM\Desktop\DMSASRTemplateV1.0\ASRvaultCreation.ps1"
+    Import-Module -Name "C:\Users\MyVM\Desktop\DMSASRTemplateV1.1\01ASRvaultCreation.ps1"
     $hcname =getConstants
     $RPName=$hcname.RPName 
-    $GetAsrplan = Get-AzureRmRecoveryServicesAsrRecoveryPlan -Name $RPName
+    #$GetAsrplan = Get-AzureRmRecoveryServicesAsrRecoveryPlan -Name $RPName
+
+#endregion
+
+#region Creates an ASR recovery plan   
+  
+    $ReplicationProtectedItem = Get-ASRReplicationProtectedItem  -ProtectionContainer $PrimaryProtContainer 
+   # $hcname =getConstants
+   # $RPName=$hcname.RPName 
+    $GetAsrplan = Get-AzureRmRecoveryServicesAsrRecoveryPlan -Name $RPName -ErrorVariable notPresent -ErrorAction SilentlyContinue 
+     if ($notPresent){
+    $GetAsrplan = New-AzureRmRecoveryServicesAsrRecoveryPlan -Name $RPName -PrimaryFabric $PrimaryFabric -RecoveryFabric $RecoveryFabric -ReplicationProtectedItem $ReplicationProtectedItem}
 
 #endregion
 

@@ -25,11 +25,14 @@
   <Import Condition=" Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets') " Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets" />
   <!-- vertag<:>end -->
   <ItemGroup>
+    <None Include="00ASRVMDetailsFileCreate.ps1" />
     <None Include="01ASRvaultCreation.ps1" />
     <None Include="02ASRMasterTemplate.ps1" />
     <None Include="03TestFailoverWithPlan.ps1" />
     <None Include="04FailoverWithPlan.ps1" />
+    <None Include="05FailbackWithReplicationProtectedItem.docx" />
     <None Include="05FailbackWithReplicationProtectedItem.ps1" />
+    <None Include="ASR Failover Execution Steps.docx" />
     <None Include="ASRVMDetails.csv" />
     <None Include="ConfigFile.csv" />
     <None Include="ConfigFile.xlsx" />
